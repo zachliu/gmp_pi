@@ -11,3 +11,6 @@ gmp-chudnovsky.o : gmp-chudnovsky.c
 
 clean:
 	\rm *.o
+
+run:
+	./gmp-chudnovsky 10000000
