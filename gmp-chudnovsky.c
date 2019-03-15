@@ -589,6 +589,7 @@ build_sieve(long int n, sieve_t *s)
 int
 main(int argc, char *argv[])
 {
+  FILE *fp;
   mpf_t  pi, qi;
   long int d=100, i, depth=1, terms;
   unsigned long psize, qsize;
@@ -738,9 +739,11 @@ main(int argc, char *argv[])
 
   /* output Pi and timing statistics */
   if (out&1)  {
+    fp = fopen("pi.txt", "w+");
     printf("pi(0,%ld)=\n", terms);
-    mpf_out_str(stdout, 10, d+2, qi);
+    mpf_out_str(fp, 10, d+2, qi);
     printf("\n");
+    fclose(fp);
   }
 
   /* free float resources */

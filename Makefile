@@ -13,4 +13,7 @@ clean:
 	\rm *.o
 
 run:
-	./gmp-chudnovsky 10000000
+	./gmp-chudnovsky 100000000 1
+
+find_bday:
+	time rg -ob "900305" pi.txt
